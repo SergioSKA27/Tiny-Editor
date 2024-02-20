@@ -22,8 +22,6 @@ You can install `st-tiny-editor` via pip:
 pip install st-tiny-editor
 ```
 
-To improve the usage section, we can provide a clearer explanation of how to use the `tiny_editor` function along with examples. Here's the revised usage section:
-
 ## Usage
 
 The `tiny_editor` function initializes a text editor with specified parameters and default values if not provided.
