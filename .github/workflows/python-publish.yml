@@ -5,6 +5,8 @@ on:
     types:
       - created
       - published
+      - edited
+      - deleted
 
 
 jobs:
