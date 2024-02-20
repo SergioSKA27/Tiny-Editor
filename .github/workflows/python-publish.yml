@@ -23,7 +23,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install setuptools wheel twine
       - name: Install dependencies 
-        run: npm install
+        run: |
+          npm install
       - name: Build st-tiny-editor JS
         run: |
           npm run build
