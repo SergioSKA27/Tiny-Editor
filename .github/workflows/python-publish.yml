@@ -2,7 +2,10 @@ name: Upload Python Package
 
 on:
   release:
-    types: [created]
+    types:
+      - created
+      - published
+
 
 jobs:
   deploy:
@@ -30,7 +33,7 @@ jobs:
 
       - name: Build
         run: |
-          yarn run build
+          yarn build
 
         working-directory: st_tiny_editor/frontend
       - name: Build and publish
