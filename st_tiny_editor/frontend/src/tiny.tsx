@@ -8,7 +8,7 @@ import { Editor } from '@tinymce/tinymce-react';
 
 function App(props: ComponentProps) {
     const {apiKey, initialValue, height, menubar, plugins, toolbar, content_style} = props.args;
-    useEffect(() => Streamlit.setFrameHeight());
+    useEffect(() => Streamlit.setFrameHeight(height));
     const editorRef = useRef<any>(null);
     return (
       <>
