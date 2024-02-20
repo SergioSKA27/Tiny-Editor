@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setuptools.setup(
     name="st-tiny-editor",
-    version="1.0.5",
+    version="1.0.6",
     author="Sergio Demis Lopez Martinez",
     author_email="sergioska81@hotmail.com",
     description="Streamlit component that allows you to render a TinyMCE editor in your app.",
