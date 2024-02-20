@@ -1,10 +1,8 @@
 import {
-  Streamlit,
   StreamlitComponentBase,
   withStreamlitConnection,
 } from "streamlit-component-lib"
-import React, { ReactNode,useRef } from "react"
-import { Editor } from '@tinymce/tinymce-react';
+import React, { ReactNode, useEffect, useState  } from "react"
 import App from "./tiny";
 
 

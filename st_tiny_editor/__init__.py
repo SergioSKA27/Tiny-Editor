@@ -1,5 +1,6 @@
 import os
 import streamlit.components.v1 as components
+from streamlit import write
 
 # Create a _RELEASE constant. We'll set this to False while we're developing
 # the component, and True when we're ready to package and distribute it.
@@ -37,7 +38,7 @@ else:
 # `declare_component` and call it done. The wrapper allows us to customize
 # our component's API: we can pre-process its input args, post-process its
 # output value, and add a docstring for users.
-def st_tiny_editor(content, key=None):
+def st_tiny_editor(apiKey = None, content = None, key = None, **kwargs):
     """Create a new instance of "my_component".
 
     Parameters
@@ -58,13 +59,39 @@ def st_tiny_editor(content, key=None):
         frontend.)
 
     """
-    # Call through to our private component function. Arguments we pass here
-    # will be sent to the frontend, where they'll be available in an "args"
-    # dictionary.
-    #
-    # "default" is a special argument that specifies the initial return
-    # value of the component before the user has interacted with it.
-    component_value = _component_func(content=content, key=key)
+
+    if apiKey is None:
+        raise ValueError("You must provide an apiKey")
+
+    if content is None:
+        content = ""
+
+    if 'height' not in kwargs:
+        kwargs['height'] = 200
+
+    if 'menubar' not in kwargs:
+        kwargs['menubar'] = False
+
+    if 'plugins' not in kwargs:
+        kwargs['plugins'] = [
+            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+            'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+            'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
+          ]
+    if 'toolbar' not in kwargs:
+        kwargs['toolbar'] = ('undo redo | blocks | ' +
+            'bold italic forecolor | alignleft aligncenter ' +
+            'alignright alignjustify | bullist numlist outdent indent | ' +
+            'removeformat | help')
+
+    if 'content_style' not in kwargs:
+        kwargs['content_style'] = 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+
+
+    component_value = _component_func(apiKey=apiKey, content=content, key=key, **kwargs)
+
+
+    write(apiKey, content, key, kwargs)
 
     # We could modify the value returned from the component if we wanted.
     # There's no need to do this in our simple example - but it's an option.

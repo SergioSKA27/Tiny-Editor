@@ -1,10 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import TinyEditor from "./MyComponent"
+import App from "./tiny"
 
 ReactDOM.render(
   <React.StrictMode>
-    <TinyEditor/>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 )
