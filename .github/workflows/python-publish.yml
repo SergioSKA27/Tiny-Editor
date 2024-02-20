@@ -24,7 +24,6 @@ jobs:
           pip install setuptools wheel twine
       - name: Build st-tiny-editor JS
         run: |
-          npm ci
           npm run build
         working-directory: st_tiny_editor/frontend
       - name: Build and publish
