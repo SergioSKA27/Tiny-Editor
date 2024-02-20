@@ -94,7 +94,7 @@ def tiny_editor(apiKey: str = None, initialValue: Optional[str] = None, key: Opt
         kwargs['toolbar'] = ('undo redo | blocks | ' +
             'bold italic forecolor | alignleft aligncenter ' +
             'alignright alignjustify | bullist numlist outdent indent | ' +
-            'removeformat | help')
+            'link image | code'+ 'removeformat | help')
 
     if 'content_style' not in kwargs:
         kwargs['content_style'] = 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
