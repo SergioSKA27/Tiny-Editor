@@ -1,1 +1,2 @@
 st_tiny_editor/frontend/node_modules
+.streamlit/secrets.toml
