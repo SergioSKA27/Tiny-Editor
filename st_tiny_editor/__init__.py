@@ -87,6 +87,9 @@ def tiny_editor(apiKey = None, initialValue = None, key = None, **kwargs):
     if 'content_style' not in kwargs:
         kwargs['content_style'] = 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
 
+    if 'disabled' not in kwargs:
+        kwargs['disabled'] = False
+
 
     component_value = _component_func(apiKey=apiKey, initialValue=initialValue, key=key, **kwargs)
 

@@ -7,7 +7,7 @@ import React, { useRef, useEffect } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 
 function App(props: ComponentProps) {
-    const {apiKey, initialValue, height, menubar, plugins, toolbar, content_style} = props.args;
+    const {apiKey, initialValue, height, menubar, plugins, toolbar, content_style,disabled} = props.args;
     useEffect(() => Streamlit.setFrameHeight(height));
     const editorRef = useRef<any>(null);
     return (
@@ -24,6 +24,7 @@ function App(props: ComponentProps) {
             content_style: content_style
           }}
           onEditorChange={(value,editor) => Streamlit.setComponentValue(value)}
+          disabled={disabled}
         />
       </>
     );
