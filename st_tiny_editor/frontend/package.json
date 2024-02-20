@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@tinymce/tinymce-react": "^4.3.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "streamlit-component-lib": "^2.0.0"
+    "streamlit-component-lib": "^2.0.0",
+    "timers-browserify": "^2.0.12"
   },
   "scripts": {
     "start": "react-scripts start",
