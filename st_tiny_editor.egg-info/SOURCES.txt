@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+st_tiny_editor/__init__.py
+st_tiny_editor/example.py
+st_tiny_editor.egg-info/PKG-INFO
+st_tiny_editor.egg-info/SOURCES.txt
+st_tiny_editor.egg-info/dependency_links.txt
+st_tiny_editor.egg-info/requires.txt
+st_tiny_editor.egg-info/top_level.txt
