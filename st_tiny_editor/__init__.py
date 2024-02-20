@@ -61,7 +61,7 @@ def st_tiny_editor(apiKey = None, content = None, key = None, **kwargs):
     """
 
     if apiKey is None:
-        raise ValueError("You must provide an apiKey")
+        apiKey = "API_KEY_NOT_PROVIDED"
 
     if content is None:
         content = ""
@@ -91,7 +91,7 @@ def st_tiny_editor(apiKey = None, content = None, key = None, **kwargs):
     component_value = _component_func(apiKey=apiKey, content=content, key=key, **kwargs)
 
 
-    write(apiKey, content, key, kwargs)
+    #write(apiKey, content, key, kwargs)
 
     # We could modify the value returned from the component if we wanted.
     # There's no need to do this in our simple example - but it's an option.
