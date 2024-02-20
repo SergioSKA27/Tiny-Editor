@@ -11,7 +11,7 @@ function App(props: ComponentProps) {
     useEffect(() => Streamlit.setFrameHeight(height));
     const editorRef = useRef<any>(null);
     return (
-      <>
+      <div>
         <Editor
           apiKey={apiKey}
           onInit={(evt, editor) => editorRef.current = editor}
@@ -26,7 +26,7 @@ function App(props: ComponentProps) {
           onEditorChange={(value,editor) => Streamlit.setComponentValue(value)}
           disabled={disabled}
         />
-      </>
+      </div>
     );
   }
 

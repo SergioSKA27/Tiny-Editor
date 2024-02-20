@@ -1,6 +1,6 @@
 import os
+from typing import  Optional, Union
 import streamlit.components.v1 as components
-from streamlit import write
 
 # Create a _RELEASE constant. We'll set this to False while we're developing
 # the component, and True when we're ready to package and distribute it.
@@ -38,26 +38,38 @@ else:
 # `declare_component` and call it done. The wrapper allows us to customize
 # our component's API: we can pre-process its input args, post-process its
 # output value, and add a docstring for users.
-def tiny_editor(apiKey = None, initialValue = None, key = None, **kwargs):
-    """Create a new instance of "my_component".
+def tiny_editor(apiKey: str = None, initialValue: Optional[str] = None, key: Optional[str] = None, **kwargs) -> Union[str, None]:
+    """
+    The `tiny_editor` function initializes a text editor with specified parameters and default values if not provided.
 
-    Parameters
-    ----------
-    name: str
-        The name of the thing we're saying hello to. The component will display
-        the text "Hello, {name}!"
-    key: str or None
-        An optional key that uniquely identifies this component. If this is
-        None, and the component's arguments are changed, the component will
-        be re-mounted in the Streamlit frontend and lose its current state.
+    :param apiKey: The `apiKey` parameter in the `tiny_editor` function is used to specify an API key for authentication. If
+    no `apiKey` is provided when calling the function, the  editor will be initialized with disabled features
 
-    Returns
-    -------
-    int
-        The number of times the component's "Click Me" button has been clicked.
-        (This is the value passed to `Streamlit.setComponentValue` on the
-        frontend.)
+    :param initialValue: The `initialValue` parameter in the `tiny_editor` function is used to specify the initial content
+    that will be displayed in the editor when it is loaded. If no initial content is provided, the editor will be empty by
+    default
 
+    :param key: The `key` parameter in the `tiny_editor` function is used to specify a unique identifier for the editor
+    instance. This identifier can be useful when working with multiple editor instances on the same page or when you need to
+    differentiate between different instances of the editor
+
+    You can also specify the following optional parameters when calling the `tiny_editor` function:
+
+    :param height: The `height` parameter in the `tiny_editor` function is used to specify the height of the editor in pixels.
+
+    :param menubar: The `menubar` parameter in the `tiny_editor` function is used to specify whether the editor should display
+
+    :param plugins: The `plugins` parameter in the `tiny_editor` function is used to specify a list of plugins that should be enabled
+
+    :param toolbar: The `toolbar` parameter in the `tiny_editor` function is used to specify the toolbar configuration for the editor
+
+    :param content_style: The `content_style` parameter in the `tiny_editor` function is used to specify the CSS styles that should be applied to the editor content
+
+    :param disabled: The `disabled` parameter in the `tiny_editor` function is used to specify whether the editor should be disabled
+
+    for more information visit https://www.tiny.cloud/docs/tinymce/latest/react-ref/
+
+    :return: The function `tiny_editor` is returning the text provided by the user in the editor in html format
     """
 
     if apiKey is None:
