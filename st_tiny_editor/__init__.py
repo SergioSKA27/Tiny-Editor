@@ -38,7 +38,7 @@ else:
 # `declare_component` and call it done. The wrapper allows us to customize
 # our component's API: we can pre-process its input args, post-process its
 # output value, and add a docstring for users.
-def st_tiny_editor(apiKey = None, content = None, key = None, **kwargs):
+def tiny_editor(apiKey = None, initialValue = None, key = None, **kwargs):
     """Create a new instance of "my_component".
 
     Parameters
@@ -63,8 +63,8 @@ def st_tiny_editor(apiKey = None, content = None, key = None, **kwargs):
     if apiKey is None:
         apiKey = "API_KEY_NOT_PROVIDED"
 
-    if content is None:
-        content = ""
+    if initialValue is None:
+        initialValue = ""
 
     if 'height' not in kwargs:
         kwargs['height'] = 200
@@ -88,7 +88,7 @@ def st_tiny_editor(apiKey = None, content = None, key = None, **kwargs):
         kwargs['content_style'] = 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
 
 
-    component_value = _component_func(apiKey=apiKey, content=content, key=key, **kwargs)
+    component_value = _component_func(apiKey=apiKey, initialValue=initialValue, key=key, **kwargs)
 
 
     #write(apiKey, content, key, kwargs)
