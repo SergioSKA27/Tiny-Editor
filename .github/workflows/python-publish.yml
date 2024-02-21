@@ -35,8 +35,7 @@ jobs:
 
       - name: Build
         run: |
-          yarn build
-
+          npm run build
         working-directory: st_tiny_editor/frontend
       - name: Build and publish
         env:
