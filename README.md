@@ -28,7 +28,7 @@ The `tiny_editor` function initializes a text editor with specified parameters a
 
 ### Parameters
 
-- **apiKey** (str, optional): Specifies an API key for authentication. If no `apiKey` is provided, certain features of the editor will be disabled.
+- **apiKey** (str, optional): Specifies an API key for authentication. If no `apiKey` is provided, the editor will be disabled.
 - **initialValue** (str, optional): Specifies the initial content to be displayed in the editor. Defaults to an empty string if not provided.
 - **key** (str, optional): Specifies a unique identifier for the editor instance. Useful when working with multiple editor instances on the same page.
 - **height** (int, optional): Specifies the height of the editor in pixels. Defaults to 200 if not provided.
